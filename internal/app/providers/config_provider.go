@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"go-assignment-bootcamp/internal/app/helpers"
 	"go-assignment-bootcamp/internal/config"
+
 	"github.com/spf13/viper"
 )
 
@@ -33,7 +34,7 @@ func (configProvider *ConfigProvider) register() {
 
 func (configProvider *ConfigProvider) initViper() {
 	viper.SetConfigType("env")
-	viper.SetConfigFile("/usr/app/.env")
+	viper.SetConfigFile("../../.env")
 
 	err := viper.ReadInConfig()
 	if err != nil {

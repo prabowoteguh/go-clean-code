@@ -2,11 +2,12 @@ package providers
 
 import (
 	"go-assignment-bootcamp/internal/app/helpers"
-	"github.com/sirupsen/logrus"
 	"io"
 	"os"
 	"time"
 	_ "time/tzdata"
+
+	"github.com/sirupsen/logrus"
 )
 
 type LoggerProvider struct {
@@ -54,7 +55,7 @@ func (loggerProvider *LoggerProvider) register() {
 
 func (loggerProvider *LoggerProvider) getFileName() string {
 	date := loggerProvider.getCurrentDate()
-	return "./storage/logs/golang-" + date + ".log"
+	return "../../storage/logs/golang-" + date + ".log"
 }
 
 func (loggerProvider *LoggerProvider) getCurrentDate() string {
